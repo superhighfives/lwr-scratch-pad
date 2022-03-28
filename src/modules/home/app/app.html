@@ -1,7 +1,15 @@
 <template>
-    <main grid>
-        <section size="1:1">
+    
+    <main>
+        <template if:false={isLoaded}>
+            <axds-skeleton-card></axds-skeleton-card>
+            <axds-skeleton-card></axds-skeleton-card>
+            <axds-skeleton-card></axds-skeleton-card>
+            <axds-skeleton-card></axds-skeleton-card>
+            <axds-skeleton-card></axds-skeleton-card>
+        </template>
+        <template if:true={isLoaded}>
             <axds-comment-list comments={data}></axds-comment-list>
-        </section>
+        </template>
     </main>
 </template>

@@ -1,10 +1,8 @@
 import { LightningElement, api, track } from 'lwc'
-import { presentationHelper } from '../../../utils/presentationHelper'
 
 export default class Comment extends LightningElement {
   @api loading
   @api error
-  @track presentationState = {}
   name
   body
   email
@@ -30,14 +28,5 @@ export default class Comment extends LightningElement {
       email: this.email,
       image: this.image,
     }
-  }
-
-  renderedCallback() {
-    this.presentationState = {
-      loading: this.loading,
-      error: this.error,
-    }
-
-    presentationHelper.call(this)
   }
 }

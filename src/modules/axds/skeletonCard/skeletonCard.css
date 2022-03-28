@@ -1,0 +1,31 @@
+@import '../../css/component.css';
+
+:host {
+  margin: 2rem;
+  padding: 2rem;
+  box-shadow: var(--c360-g-shadow-3);
+  border-radius: var(--c360-g-radius-border-4);
+  display: block;
+}
+
+:host > * + * {
+  margin-top: 1rem;
+}
+
+.header {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.header .avatar {
+  --border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+}
+
+.header .title {
+  width: 100%;
+  max-height: 1rem;
+}
