@@ -19,12 +19,3 @@ export function presentationHelper() {
 
   // TODO: PRESENTATION TYPE: ERROR ///
 }
-
-export function generateSkeletons(amount, key = 'id') {
-  const output = Array(Number(amount))
-    .fill()
-    .map((element, index) => {
-      return { [key]: `l-${index}` }
-    })
-  return output
-}

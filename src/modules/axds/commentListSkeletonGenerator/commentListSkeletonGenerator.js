@@ -1,5 +1,4 @@
 import { LightningElement, api, track } from 'lwc'
-import { generateSkeletons } from '../../../utils/presentationHelper'
 
 export default class CommentListSkeletonGenerator extends LightningElement {
   @api loading
@@ -10,7 +9,11 @@ export default class CommentListSkeletonGenerator extends LightningElement {
     if (this.comments.length) {
       return this.comments
     } else {
-      return generateSkeletons(this.skeletons)
+      return Array(Number(this.skeletons))
+        .fill()
+        .map((element, index) => {
+          return { id: `l-${index}` }
+        })
     }
   }
 }
